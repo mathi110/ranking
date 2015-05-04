@@ -1,0 +1,27 @@
+<div class="players index">
+  <h2>Players</h2>
+
+  <%= link_to("Add New Player", '#', :class => 'action new') %>
+
+  <table class="listing" summary="Player list">
+    <tr class="header">
+      <th> </th>
+      <th>Player</th>
+      <th>Ranking</th>
+      <th>Points</th>
+    </tr>
+    <% @players.each do |player| %>
+    <tr>
+      <td><%= player.ranking %></td>
+      <td><%= player.name %></td>
+      <td><%= player.points %></td>
+      <td class="actions">
+        <%= link_to("Show", {:action => 'show' , :id => subject.id},  :class => 'action show') %>
+        <%= link_to("Edit", '#', :class => 'action edit') %>
+        <%= link_to("Delete", '#', :class => 'action delete') %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+
