@@ -1,2 +1,20 @@
-<h1>Players#new</h1>
-<p>Find me in app/views/players/new.html.erb</p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<div class="players new">
+  <h2>Create Subject</h2>
+
+  <%= form_for(:player, :url => {:action => 'create'}) do |f| %>
+
+    <table summary="Player form fields">
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:name) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Create Player") %>
+    </div>
+
+  <% end %>
+</div>

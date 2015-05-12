@@ -1,13 +1,12 @@
 <div class="players index">
   <h2>Players</h2>
 
-  <%= link_to("Add New Player", '#', :class => 'action new') %>
+  <%= link_to("Add New Player", {:action => 'new'}, :class => 'action new') %>
 
   <table class="listing" summary="Player list">
     <tr class="header">
-      <th> </th>
-      <th>Player</th>
       <th>Ranking</th>
+      <th>Player</th>
       <th>Points</th>
     </tr>
     <% @players.each do |player| %>
@@ -16,9 +15,7 @@
       <td><%= player.name %></td>
       <td><%= player.points %></td>
       <td class="actions">
-        <%= link_to("Show", {:action => 'show' , :id => subject.id},  :class => 'action show') %>
-        <%= link_to("Edit", '#', :class => 'action edit') %>
-        <%= link_to("Delete", '#', :class => 'action delete') %>
+        <%= link_to("Show", {:action => 'show' , :id => player.id},  :class => 'action show') %>
       </td>
     </tr>
     <% end %>
