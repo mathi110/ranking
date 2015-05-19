@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    
+    background-color: #A0A0A0;
+  }
+  </style>
+</head>
+
+<body>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-primary') %>
+
+<div class="container">
+  <h2>Remove Player</h2>
+
+  <%= form_for(:player, :url => {:action => 'destroy', :id => @player.id}) do |f| %>
+
+    <p>Are you sure you want to permanently remove this player?</p>
+
+    <p class="reference-name"><%= @player.name %></p>
+
+    <div class="form-buttons">
+      <%= submit_tag("remove Player") %>
+    </div>
+
+  <% end %>
+</div>
+</body>
+</html>

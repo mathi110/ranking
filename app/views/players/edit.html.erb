@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Case</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <style>
+  body {
+    
+    background-color: #A0A0A0;
+  }
+  </style>
+</head>
+<body>
+
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'btn btn-primary') %>
+<div class="container">
+  <h2>Update Subject</h2>
+
+  <%= form_for(:player, :url => {:action => 'update', :id => @player.id}) do |f| %>
+
+    <table class="table" summary="Player form fields">
+      <tr>
+        <th>Name</th>
+        <td><%= f.text_field(:name) %></td>
+      </tr>
+      <tr>
+        <th>Points</th>
+        <td><%= f.text_field(:points) %></td>
+      </tr>
+      <tr>
+        <th>Ranking</th>
+        <td><%= f.text_field(:ranking) %></td>
+      </tr>
+    </table>
+
+    <div class="form-buttons">
+      <%= submit_tag("Update Subject") %>
+    </div>
+
+  <% end %>
+</div>
+ </body>
+ </html>
